@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Mypolonga Orchard | Australian Dried Apricots & Stone Fruit</title>
+  <meta name="description" content="Order premium Australian dried apricots, nectarines, peaches, apricot jam and gift boxes direct from Mypolonga Orchard. Thomson Family, South Australia. Since 1985." />
+  <meta name="keywords" content="dried apricots, Australian apricots, stone fruit, dried nectarines, dried peaches, apricot jam, gift boxes, Mypolonga Orchard, South Australia, Thomson Family" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://shop.mypolongaorchard.com.au/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shop — Mypolonga Orchard | Australian Dried Apricots & Stone Fruit" />
+  <meta property="og:description" content="Order premium Australian dried apricots, nectarines, peaches, apricot jam and gift boxes direct from Mypolonga Orchard. Thomson Family, South Australia. Since 1985." />
+  <meta property="og:url" content="https://shop.mypolongaorchard.com.au/" />
+  <meta property="og:site_name" content="Mypolonga Orchard" />
+  <meta property="og:locale" content="en_AU" />
+  <meta property="og:image" content="https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/mypolonga-orchards-social-share-1-1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shop — Mypolonga Orchard | Australian Dried Apricots & Stone Fruit" />
+  <meta name="twitter:description" content="Order premium Australian dried apricots, nectarines, peaches, apricot jam and gift boxes direct from Mypolonga Orchard. Thomson Family, South Australia. Since 1985." />
+  <meta name="twitter:image" content="https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/mypolonga-orchards-social-share-1-1.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #9BBF1B;
+      --green-dark:  #7A9A14;
+      --green-deep:  #3B5E0A;
+      --success:     #2E7D32;
+      --orange:      #E8854A;
+      --bg:          #FAF8F4;
+      --card-bg:     #FFFFFF;
+      --text:        #1A1A1A;
+      --text-mid:    #555555;
+      --text-light:  #888888;
+      --border:      #E8E4DE;
+      --shadow:      0 2px 12px rgba(0,0,0,0.08);
+      --radius:      12px;
+      --font:        'Raleway', sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 100px; /* space for sticky bar */
+    }
+
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: var(--font); border: none; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-header a {
+      display: inline-block;
+    }
+
+    .site-header img {
+      height: 52px;
+      width: auto;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       LAYOUT WRAPPER
+    ============================================================ */
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 0;
+    }
+
+    /* Desktop: two-column */
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
+      .page-wrap {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 28px;
+        align-items: start;
+        padding: 32px 24px 48px;
+      }
+      .main-col { min-width: 0; }
+      .cart-col {
+        position: sticky;
+        top: 90px;
+      }
+    }
+
+    /* ============================================================
+       SECTION A — HERO PRODUCT
+    ============================================================ */
+    .hero-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    /* Mobile: side-by-side layout — image left, details right */
+    .hero-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .hero-image-wrap {
+      flex: 0 0 140px;
+      width: 140px;
+      min-height: 140px;
+      overflow: hidden;
+      background: #f0ede6;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    .hero-details {
+      flex: 1;
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-details h1 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .hero-tagline {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .hero-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+    }
+
+    /* Desktop: revert to stacked layout */
+    @media (min-width: 768px) {
+      .hero-inner {
+        flex-direction: column;
+      }
+      .hero-image-wrap {
+        flex: none;
+        width: 100%;
+        min-height: unset;
+        aspect-ratio: 4/3;
+      }
+      .hero-details {
+        padding: 20px 20px 24px;
+      }
+      .hero-details h1 {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+      .hero-tagline {
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+      .hero-price {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+    }
+
+    /* Quantity selector */
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 16px;
+    }
+
+    .qty-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-mid);
+      margin-right: 14px;
+    }
+
+    .qty-btn {
+      width: 48px;
+      height: 48px;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .qty-btn:hover, .qty-btn:active { background: var(--border); border-color: var(--green); }
+
+    .qty-display {
+      width: 52px;
+      height: 48px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      border: 2px solid var(--border);
+      border-left: none;
+      border-right: none;
+      background: #fff;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-add-hero {
+      width: 100%;
+      height: 56px;
+      background: var(--green);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 10px;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, transform 0.1s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-add-hero:hover { background: var(--green-dark); }
+    .btn-add-hero:active { transform: scale(0.98); }
+
+    .btn-add-hero.added {
+      background: var(--success);
+    }
+
+    /* Hero inline stepper (matches grid card stepper) */
+    .hero-stepper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 56px;
+      background: var(--green);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .hero-step-btn {
+      flex: 0 0 56px;
+      height: 100%;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Plus side gets a bright accent to invite tapping */
+    #heroStepPlus {
+      background: #C8E63A;
+      color: #2d4a00;
+    }
+    #heroStepPlus:hover { background: #d6f040; }
+    #heroStepPlus:active { background: #b8d42e; }
+    .hero-step-btn:hover { background: rgba(0,0,0,0.12); }
+    .hero-step-btn:active { background: rgba(0,0,0,0.22); }
+    .hero-step-qty {
+      flex: 1;
+      text-align: center;
+      color: #fff;
+      font-size: 28px;
+      font-weight: 800;
+      font-family: var(--font);
+    }
+
+    /* Out of stock hero */
+    .out-of-stock-notice {
+      background: #f5f5f5;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      color: var(--text-mid);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       SECTION B — QUICK-ADD GRID
+    ============================================================ */
+    .quick-add-section {
+      margin-bottom: 28px;
+    }
+
+    .quick-add-section h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .product-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .product-card:not(.out-of-stock):hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      transform: translateY(-2px);
+    }
+
+    .product-card:not(.out-of-stock):active {
+      transform: scale(0.98);
+    }
+
+    .product-card.is-added {
+      border-color: var(--success);
+    }
+
+    .product-card.out-of-stock {
+      opacity: 0.45;
+    }
+    .product-card.coming-soon-card {
+      opacity: 1 !important;
+    }
+    .product-card.coming-soon-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+      transform: translateY(-2px);
+    }
+    .product-card.coming-soon-card:active {
+      transform: scale(0.98);
+    }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: #f0ede6;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    .card-body {
+      padding: 10px 10px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    @media (min-width: 400px) {
+      .card-name { font-size: 14px; }
+    }
+
+    .card-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+
+    .btn-quick-add {
+      width: 100%;
+      min-height: 48px;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+      margin-top: auto;
+    }
+
+    .btn-quick-add:hover:not(:disabled) {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .btn-quick-add:disabled {
+      cursor: not-allowed;
+      background: #f0f0f0;
+      color: var(--text-light);
+      border-color: #ddd;
+    }
+
+    /* Card stepper — shown when item is already in cart */
+    .card-stepper {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      border: 2px solid var(--success);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--success);
+      -webkit-tap-highlight-color: transparent;
+      min-height: 48px;
+    }
+
+    .card-stepper__btn {
+      /* Mobile: compact but tappable */
+      flex: 0 0 40px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.1s;
+    }
+
+    /* Plus button gets bright accent colour to invite tapping */
+    .card-stepper__plus {
+      background: #C8E63A !important;
+      color: #2d4a00 !important;
+    }
+    .card-stepper__plus:active {
+      background: #b8d42e !important;
+    }
+
+    .card-stepper__btn:active {
+      background: rgba(0,0,0,0.15);
+    }
+
+    .card-stepper__qty {
+      flex: 1;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Desktop: slightly more compact */
+    @media (min-width: 768px) {
+      .card-stepper__btn {
+        flex: 0 0 36px;
+        height: 40px;
+        font-size: 20px;
+      }
+      .card-stepper__qty {
+        font-size: 20px;
+      }
+      .card-stepper {
+        border-radius: 8px;
+      }
+    }
+
+    /* ============================================================
+       SECTION C — DESKTOP CART SIDEBAR
+    ============================================================ */
+    .cart-sidebar {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .cart-sidebar { display: block; }
+    }
+
+    .cart-sidebar-heading {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cart-count-badge {
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 2px 8px;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .cart-empty-msg {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+      padding: 24px 0;
+    }
+
+    .cart-items-list {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item:last-child { border-bottom: none; }
+
+    .cart-item-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: #f0ede6;
+      flex-shrink: 0;
+      padding: 3px;
+    }
+
+    .cart-item-info { flex: 1; min-width: 0; }
+
+    .cart-item-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cart-item-qty-price {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 18px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .cart-item-remove:hover { color: #c0392b; background: #fef0ee; }
+
+    .cart-totals {
+      border-top: 2px solid var(--border);
+      padding-top: 14px;
+      margin-bottom: 16px;
+    }
+
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 8px;
+    }
+
+    .totals-row.shipping-free { color: var(--success); font-weight: 600; }
+    .totals-row.shipping-gap { color: var(--orange); font-size: 13px; }
+
+    .totals-row.total-row {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      height: 56px;
+      background: var(--green);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 10px;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, transform 0.1s;
+      margin-bottom: 12px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-checkout:hover { background: var(--green-dark); }
+    .btn-checkout:active { transform: scale(0.98); }
+    .btn-checkout:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .trust-signals {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-light);
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .trust-signals span { display: flex; align-items: center; gap: 4px; }
+
+    /* ============================================================
+       SECTION D — TRUST FOOTER
+    ============================================================ */
+    .trust-footer {
+      text-align: center;
+      padding: 24px 16px 32px;
+      font-size: 13px;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    .trust-footer p { margin-bottom: 8px; }
+
+    .trust-footer a {
+      color: var(--green-deep);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* ============================================================
+       MOBILE STICKY CART BAR
+    ============================================================ */
+    .mobile-cart-bar {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--green-deep);
+      color: #fff;
+      z-index: 200;
+      align-items: center;
+      padding: 0 16px;
+      height: 64px;
+      gap: 12px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-cart-bar { display: none; }
+    }
+
+    .mobile-cart-bar-info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mobile-cart-icon { font-size: 22px; }
+
+    .mobile-cart-text {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .mobile-cart-total {
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .btn-mobile-checkout {
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 0 18px;
+      height: 44px;
+      border-radius: 8px;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-mobile-checkout:disabled {
+      background: rgba(255,255,255,0.2);
+      cursor: not-allowed;
+    }
+
+    /* ============================================================
+       MOBILE CART DRAWER
+    ============================================================ */
+    .cart-drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 300;
+    }
+
+    .cart-drawer-overlay.open { display: block; }
+
+    .cart-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-radius: 20px 20px 0 0;
+      z-index: 400;
+      padding: 0 20px 32px;
+      max-height: 85vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .cart-drawer.open { transform: translateY(0); }
+
+    .drawer-handle {
+      width: 40px;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 12px auto 16px;
+    }
+
+    .drawer-heading {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-drawer-checkout {
+      width: 100%;
+      height: 56px;
+      background: var(--green);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 10px;
+      margin-top: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-drawer-checkout:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* ============================================================
+       CHECKOUT PROCESSING OVERLAY
+    ============================================================ */
+    .checkout-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.92);
+      z-index: 500;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .checkout-overlay.show { display: flex; }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .checkout-overlay p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+
+    /* ============================================================
+       CONTACT MODAL (pre-checkout)
+    ============================================================ */
+    .contact-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 600;
+      align-items: flex-end; /* slides up from bottom on mobile */
+      justify-content: center;
+    }
+    .contact-modal-backdrop.show { display: flex; }
+
+    .contact-modal {
+      background: var(--card-bg);
+      border-radius: 20px 20px 0 0;
+      padding: 28px 24px 36px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 -4px 32px rgba(0,0,0,0.18);
+      animation: slideUp 0.28s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(60px); opacity: 0; }
+      to   { transform: translateY(0);   opacity: 1; }
+    }
+    @media (min-width: 640px) {
+      .contact-modal-backdrop { align-items: center; }
+      .contact-modal { border-radius: 20px; }
+    }
+
+    .contact-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .contact-modal-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .contact-modal-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-light);
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .contact-modal-subtitle {
+      font-size: 13px;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+    .contact-field {
+      margin-bottom: 14px;
+    }
+    .contact-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-mid);
+      margin-bottom: 6px;
+    }
+    .contact-field input {
+      width: 100%;
+      height: 48px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 0 14px;
+      font-size: 16px; /* prevents iOS zoom */
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.15s;
+      outline: none;
+    }
+    .contact-field input:focus { border-color: var(--green); }
+    .contact-field input.error { border-color: #e53935; }
+    .contact-field .field-error {
+      font-size: 12px;
+      color: #e53935;
+      margin-top: 4px;
+      display: none;
+    }
+    .contact-field .field-error.show { display: block; }
+    .contact-phone-note {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .promo-input-row {
+      display: flex;
+      gap: 8px;
+    }
+    .promo-input-row input {
+      flex: 1;
+    }
+    .btn-apply-promo {
+      height: 48px;
+      padding: 0 18px;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-apply-promo:hover { background: var(--green); }
+    .btn-apply-promo:disabled { background: var(--border); color: var(--text-light); cursor: not-allowed; }
+    .promo-feedback {
+      font-size: 13px;
+      margin-top: 6px;
+      min-height: 18px;
+    }
+    .promo-feedback.success { color: var(--green-dark); font-weight: 600; }
+    .promo-feedback.error   { color: #e53935; }
+    .promo-feedback.loading { color: var(--text-light); }
+
+    .btn-contact-submit {
+      width: 100%;
+      height: 56px;
+      background: var(--green);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.15s, transform 0.1s;
+      font-family: var(--font);
+    }
+    .btn-contact-submit:hover { background: var(--green-dark); }
+    .btn-contact-submit:active { transform: scale(0.98); }
+    .contact-privacy {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 12px;
+    }
+
+    /* ============================================================
+       FLASH NOTIFICATION
+    ============================================================ */
+    .flash-notice {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: var(--success);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 30px;
+      z-index: 600;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .flash-notice.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+    }
+  
+    /* Coming Soon badge on gift box cards */
+    .product-card.coming-soon-card {
+      position: relative;
+    }
+    .coming-soon-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #C8E63A;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .btn-coming-soon {
+      width: 100%;
+      padding: 14px;
+      background: #2d2d2d;
+      color: #C8E63A;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: default;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <a href="https://www.mypolongaorchard.com.au/" aria-label="Back to Mypolonga Orchard">
+      <img
+        src="images/logo.webp"
+        alt="Mypolonga Orchard"
+        height="52"
+        style="height:52px;width:auto;"
+      />
+    </a>
+  </header>
+
+  <!-- ============================================================
+       FLASH NOTIFICATION
+  ============================================================ -->
+  <div class="flash-notice" id="flashNotice" role="status" aria-live="polite"></div>
+
+  <!-- ============================================================
+       PAGE WRAP (two-col on desktop)
+  ============================================================ -->
+  <div class="page-wrap">
+
+    <!-- LEFT / MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- SECTION A: HERO PRODUCT -->
+      <section class="hero-section" id="heroSection" aria-label="Selected product">
+        <div class="hero-inner">
+        <div class="hero-image-wrap">
+          <img id="heroImg" src="" alt="" loading="eager" />
+        </div>
+        <div class="hero-details">
+          <h1 id="heroName"></h1>
+          <p class="hero-tagline" id="heroTagline"></p>
+          <div class="hero-price" id="heroPrice"></div>
+
+          <!-- In-stock controls: one-tap add, stepper appears when in cart -->
+          <div id="heroControls">
+            <!-- State A: not yet in cart -->
+            <div id="heroAddWrap">
+              <button class="btn-add-hero" id="heroAddBtn">+ Add to cart</button>
+            </div>
+            <!-- State B: in cart — shows inline stepper -->
+            <div id="heroStepperWrap" style="display:none;">
+              <div class="hero-stepper">
+                <button class="hero-step-btn" id="heroStepMinus" aria-label="Remove one">−</button>
+                <span class="hero-step-qty" id="heroStepQty">1</span>
+                <button class="hero-step-btn" id="heroStepPlus" aria-label="Add one more">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Out-of-stock notice -->
+          <div id="heroOutOfStock" class="out-of-stock-notice" style="display:none;">
+            Currently out of stock — <a href="mailto:mypolongaorchard@gmail.com" style="color:var(--green-dark);font-weight:700;">Notify me when back</a>
+          </div>
+        </div>
+        </div><!-- /.hero-inner -->
+      </section>
+
+      <!-- SECTION B: QUICK-ADD GRID -->
+      <section class="quick-add-section" aria-label="Add more products">
+        <h2>Grab these too — one tap to add</h2>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <!-- TRUST FOOTER -->
+      <footer class="trust-footer">
+        <p>Family owned since 1985 &middot; Grown in South Australia &middot; Shipped Australia-wide</p>
+        <p><a href="https://www.mypolongaorchard.com.au/">&larr; Back to Mypolonga Orchard</a></p>
+      </footer>
+
+    </div><!-- /main-col -->
+
+    <!-- RIGHT / CART COLUMN (desktop only) -->
+    <aside class="cart-col" aria-label="Your order">
+      <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-heading">
+          Your order
+          <span class="cart-count-badge" id="sidebarBadge">0</span>
+        </div>
+
+        <p class="cart-empty-msg" id="sidebarEmpty">Your cart is empty. Add a product above to get started.</p>
+
+        <ul class="cart-items-list" id="sidebarItemsList"></ul>
+
+        <div class="cart-totals" id="sidebarTotals" style="display:none;">
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span id="sidebarSubtotal">$0.00</span>
+          </div>
+          <div class="totals-row" id="sidebarShippingRow">
+            <span>Shipping</span>
+            <span id="sidebarShipping">$9.95</span>
+          </div>
+          <div class="totals-row" id="sidebarShippingMsg" style="display:none;"></div>
+          <div class="totals-row total-row">
+            <span>Total</span>
+            <span id="sidebarTotal">$0.00</span>
+          </div>
+        </div>
+
+        <button class="btn-checkout" id="sidebarCheckoutBtn" disabled>
+          Secure Checkout &rarr;
+        </button>
+
+        <div class="trust-signals">
+          <span>🔒 Secure payment</span>
+          <span>✓ Aus Post delivery</span>
+          <span>★ 4.9 rated</span>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /page-wrap -->
+
+  <!-- ============================================================
+       MOBILE STICKY CART BAR
+  ============================================================ -->
+  <div class="mobile-cart-bar" id="mobileCartBar" role="button" aria-label="View cart" tabindex="0">
+    <div class="mobile-cart-bar-info" id="mobileCartBarInfo">
+      <span class="mobile-cart-icon">🛒</span>
+      <span class="mobile-cart-text" id="mobileCartText">0 items</span>
+      <span class="mobile-cart-total" id="mobileCartTotal">$0.00</span>
+    </div>
+    <button class="btn-mobile-checkout" id="mobileCheckoutBtn" disabled>
+      Checkout &rarr;
+    </button>
+  </div>
+
+  <!-- ============================================================
+       MOBILE CART DRAWER
+  ============================================================ -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Your cart">
+    <div class="drawer-handle"></div>
+    <div class="drawer-heading">
+      Your order
+      <span class="cart-count-badge" id="drawerBadge">0</span>
+    </div>
+
+    <ul class="cart-items-list" id="drawerItemsList"></ul>
+
+    <div class="cart-totals" id="drawerTotals" style="display:none;">
+      <div class="totals-row">
+        <span>Subtotal</span>
+        <span id="drawerSubtotal">$0.00</span>
+      </div>
+      <div class="totals-row" id="drawerShippingRow">
+        <span>Shipping</span>
+        <span id="drawerShipping">$9.95</span>
+      </div>
+      <div class="totals-row" id="drawerShippingMsg" style="display:none;"></div>
+      <div class="totals-row total-row">
+        <span>Total</span>
+        <span id="drawerTotal">$0.00</span>
+      </div>
+    </div>
+
+    <button class="btn-drawer-checkout" id="drawerCheckoutBtn" disabled>
+      Secure Checkout &rarr;
+    </button>
+
+    <div class="trust-signals" style="margin-top:12px;">
+      <span>🔒 Secure payment</span>
+      <span>✓ Aus Post delivery</span>
+      <span>★ 4.9 rated</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONTACT CAPTURE MODAL (pre-checkout)
+  ============================================================ -->
+  <div class="contact-modal-backdrop" id="contactModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="contact-modal">
+      <div class="contact-modal-header">
+        <h3 id="contactModalTitle">Almost there!</h3>
+        <button class="contact-modal-close" id="contactModalClose" aria-label="Close">&times;</button>
+      </div>
+      <p class="contact-modal-subtitle">Just your details so we can get your order to you.</p>
+
+      <div class="contact-field">
+        <label for="contactName">Full Name <span style="color:#e53935">*</span></label>
+        <input type="text" id="contactName" name="name" autocomplete="name" placeholder="Jane Smith" />
+        <div class="field-error" id="contactNameError">Please enter your name.</div>
+      </div>
+
+      <div class="contact-field">
+        <label for="contactEmail">Email Address <span style="color:#e53935">*</span></label>
+        <input type="email" id="contactEmail" name="email" autocomplete="email" placeholder="jane@example.com" />
+        <div class="field-error" id="contactEmailError">Please enter a valid email address.</div>
+      </div>
+
+      <div class="contact-field">
+        <label for="contactPhone">Mobile Number <span style="color:#e53935">*</span></label>
+        <input type="tel" id="contactPhone" name="phone" autocomplete="tel" placeholder="0412 345 678" />
+        <div class="field-error" id="contactPhoneError">Please enter your mobile number.</div>
+        <p class="contact-phone-note">&#128274; Required by Australia Post for secure delivery notifications.</p>
+      </div>
+
+      <div class="contact-field" id="promoCodeField">
+        <label for="promoCode">Discount Code <span style="font-size:11px;font-weight:400;color:var(--text-light);text-transform:none;letter-spacing:0">(optional)</span></label>
+        <div class="promo-input-row">
+          <input type="text" id="promoCode" name="promo" autocomplete="off" placeholder="e.g. THANKYOU10" style="text-transform:uppercase" />
+          <button type="button" class="btn-apply-promo" id="applyPromoBtn">Apply</button>
+        </div>
+        <div class="promo-feedback" id="promoFeedback"></div>
+      </div>
+
+      <button class="btn-contact-submit" id="contactSubmitBtn">Continue to Payment &rarr;</button>
+      <p class="contact-privacy">&#128274; Your details are kept private and never shared.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CHECKOUT PROCESSING OVERLAY
+  ============================================================ -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="spinner"></div>
+    <p>Sending your order&hellip;</p>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    'use strict';
+
+    /* ============================================================
+       CONFIGURATION — REPLACE THESE VALUES BEFORE GOING LIVE
+    ============================================================ */
+    const WEBHOOK_URL        = 'https://mypo-orchard-crm.manus.space/api/webhooks/orders';
+    const VALIDATE_PROMO_URL = 'https://mypo-orchard-crm.manus.space/api/discounts/validate';
+    const REDIRECT_URL       = 'https://REPLACE_WITH_PAYMENT_PAGE_URL'; // ← REPLACE THIS
+
+    // ---- SHIPPING CONFIGURATION ----
+    // Every order is charged: Aus Post postage (item-count based) + $5 handling
+    // Both combined into one single "Shipping" number shown to the customer
+    const HANDLING_FEE = 5.00;
+
+    // Aus Post item-count tiers (items → postage cost, excl. handling)
+    // 1–4 bags = $11.50 (fits in large letter / small satchel)
+    // 5–9 bags = $19.80 (medium satchel up to 3kg)
+    // 10–15 bags = $23.80 (large satchel up to 5kg)
+    // 16+ bags = $34.50 (extra large / over 5kg)
+    const ITEM_POSTAGE_TIERS = [
+      { maxItems:  4, rate: 11.50 },
+      { maxItems:  9, rate: 19.80 },
+      { maxItems: 15, rate: 23.80 },
+      { maxItems: 999, rate: 34.50 },
+    ];
+
+    /* ============================================================
+       PRODUCT CATALOGUE
+    ============================================================ */
+    const PRODUCTS = [
+      {
+        id:          'dried-apricots',
+        name:        'Dried Apricots 400g',
+        tagline:     'Available in 400g packs — sweet, tangy, sun-dried to perfection.',
+        price:       15.00,
+        inStock:     true,
+        weight:      400,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Sundried-Apricot-Front.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Sundried-Apricot-Front-300x300.webp',
+      },
+      {
+        id:          'dried-nectarines',
+        name:        'Dried Nectarines 330g',
+        tagline:     'Available in 330g packs — smooth, aromatic, 100% South Australian.',
+        price:       14.00,
+        inStock:     true,
+        weight:      330,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Dried-Nectarines-Front.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Dried-Nectarines-Front-300x300.webp',
+      },
+      {
+        id:          'apricot-jam',
+        name:        'Australian Apricot Jam 300ml',
+        tagline:     'Available in 300g jar — orchard-fresh apricots, no additives.',
+        price:       6.00,
+        inStock:     true,
+        weight:      305,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Apricot-Jam-Front.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/Mypolonga-Orchard-Apricot-Jam-Front-300x300.webp',
+      },
+      {
+        id:          'citrus-dehydrated',
+        name:        'Citrus Dehydrated Fruit 75g',
+        tagline:     'Available in 75g packs — zesty, light, and full of flavour.',
+        price:       21.50,
+        inStock:     true,
+        weight:      80,
+        imgFull:     'images/citrus-dehydrated.webp',
+        imgThumb:    'images/citrus-dehydrated.webp',
+      },
+      {
+        id:          'gift-box-small',
+        name:        'Gift Box — Small',
+        comingSoon:  true,
+        tagline:     'Dried Apricots, Dried Nectarines & Apricot Jam — beautifully presented in a black gift box with ribbon.',
+        price:       97.00,
+        inStock:     false,
+        weight:      1335,
+        imgFull:     'images/gift-box-small.webp',
+        imgThumb:    'images/gift-box-small.webp',
+      },
+      {
+        id:          'gift-box-large',
+        name:        'Gift Box — Large',
+        comingSoon:  true,
+        tagline:     '2× Dried Apricots, Nectarines, Jam, 2× Citrus & Dried Peaches — the ultimate orchard gift box.',
+        price:       157.00,
+        inStock:     false,
+        weight:      2695,
+        imgFull:     'images/gift-box-large.webp',
+        imgThumb:    'images/gift-box-large.webp',
+      },
+      {
+        id:          'dried-peaches',
+        name:        'Dried Peaches 300g',
+        tagline:     'Available in 300g packs — velvety sweetness, perfect for snacking.',
+        price:       14.00,
+        inStock:     false,
+        weight:      300,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/australian-dried-peaches-by-mypolonga-orchard.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/australian-dried-peaches-by-mypolonga-orchard-300x300.webp',
+      },
+      {
+        id:          'minced-apricots',
+        name:        'Minced Dried Apricots 500g',
+        tagline:     'Available in 500g bag — ready to use in baking and savoury dishes.',
+        price:       13.50,
+        inStock:     false,
+        weight:      500,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/minced-apricots-by-mypolonga-orcahrd.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/minced-apricots-by-mypolonga-orcahrd-300x300.webp',
+      },
+      {
+        id:          'apricot-balls',
+        name:        'Apricot Balls',
+        tagline:     'Available in 300g packs — handcrafted, made to order.',
+        price:       7.00,
+        inStock:     false,
+        weight:      300,
+        imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/apricot-balls-by-mypolonga-orchard.webp',
+        imgThumb:    'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/apricot-balls-by-mypolonga-orchard-300x300.webp',
+      },
+    ];
+
+    /* ============================================================
+       URL PARAMETER HELPERS
+    ============================================================ */
+    function getParam(name) {
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+
+    function getHeroProductId() {
+      const slug = getParam('product').toLowerCase().trim();
+      const match = PRODUCTS.find(p => p.id === slug);
+      return match ? match.id : 'dried-apricots'; // default
+    }
+
+    /* ============================================================
+       CART STATE
+    ============================================================ */
+    // cart: { [productId]: quantity }
+    const cart = {};
+
+    // Applied discount (set after successful CRM validation)
+    let appliedDiscount = null;
+    // { code, type: 'percentage', value: 10, applies_to: 'subtotal' }
+
+    function cartItemCount() {
+      return Object.values(cart).reduce((a, b) => a + b, 0);
+    }
+
+    function cartSubtotal() {
+      return Object.entries(cart).reduce((sum, [id, qty]) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        return sum + (p ? p.price * qty : 0);
+      }, 0);
+    }
+
+    function cartTotalWeight() {
+      return Object.entries(cart).reduce((sum, [id, qty]) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        return sum + (p ? (p.weight || 0) * qty : 0);
+      }, 0);
+    }
+
+    function auspostRate(itemCount) {
+      for (const tier of ITEM_POSTAGE_TIERS) {
+        if (itemCount <= tier.maxItems) return tier.rate;
+      }
+      return 34.50;
+    }
+
+    function cartShipping() {
+      // Always: Aus Post postage (by item count) + $5 handling = one combined shipping charge
+      return auspostRate(cartItemCount()) + HANDLING_FEE;
+    }
+
+    function cartPostageOnly() {
+      return auspostRate(cartItemCount());
+    }
+
+    function cartDiscountAmount(subtotal) {
+      if (!appliedDiscount) return 0;
+      if (appliedDiscount.type === 'percentage' && appliedDiscount.applies_to === 'subtotal') {
+        return parseFloat((subtotal * appliedDiscount.value / 100).toFixed(2));
+      }
+      return 0;
+    }
+
+    function cartTotal(subtotal) {
+      return subtotal - cartDiscountAmount(subtotal) + cartShipping();
+    }
+
+    function fmt(n) {
+      return '$' + n.toFixed(2);
+    }
+
+    /* ============================================================
+       HERO PRODUCT
+    ============================================================ */
+    let heroId = getHeroProductId();
+
+    function renderHero() {
+      const p = PRODUCTS.find(x => x.id === heroId);
+      if (!p) return;
+
+      document.getElementById('heroImg').src = p.imgFull;
+      document.getElementById('heroImg').alt = p.name;
+      document.getElementById('heroName').textContent = p.name;
+      document.getElementById('heroTagline').textContent = p.tagline;
+      document.getElementById('heroPrice').textContent = fmt(p.price);
+
+      if (p.inStock) {
+        document.getElementById('heroControls').style.display = '';
+        document.getElementById('heroOutOfStock').style.display = 'none';
+        updateHeroControls();
+      } else {
+        document.getElementById('heroControls').style.display = 'none';
+        document.getElementById('heroOutOfStock').style.display = '';
+      }
+    }
+
+    function updateHeroControls() {
+      const inCart = cart[heroId] || 0;
+      if (inCart > 0) {
+        // Show stepper, hide add button
+        document.getElementById('heroAddWrap').style.display = 'none';
+        document.getElementById('heroStepperWrap').style.display = '';
+        document.getElementById('heroStepQty').textContent = inCart;
+      } else {
+        // Show add button, hide stepper
+        document.getElementById('heroAddWrap').style.display = '';
+        document.getElementById('heroStepperWrap').style.display = 'none';
+      }
+    }
+
+    // One tap — add to cart immediately
+    document.getElementById('heroAddBtn').addEventListener('click', () => {
+      addToCart(heroId, 1);
+      updateHeroControls();
+      showFlash(PRODUCTS.find(p => p.id === heroId).name + ' added to cart');
+      scrollToCartBar();
+    });
+
+    // Also make the whole hero image tappable
+    document.getElementById('heroSection').addEventListener('click', (e) => {
+      // Only fire if clicking image area and product is in-stock and not yet in cart
+      if (e.target.closest('#heroControls') || e.target.closest('#heroOutOfStock')) return;
+      const p = PRODUCTS.find(x => x.id === heroId);
+      if (!p || !p.inStock) return;
+      if ((cart[heroId] || 0) === 0) {
+        addToCart(heroId, 1);
+        updateHeroControls();
+        showFlash(p.name + ' added to cart');
+        scrollToCartBar();
+      }
+    });
+
+    document.getElementById('heroStepMinus').addEventListener('click', () => {
+      const inCart = cart[heroId] || 0;
+      if (inCart > 1) {
+        cart[heroId] = inCart - 1;
+        renderCart();
+        updateHeroControls();
+      } else {
+        // Remove entirely
+        delete cart[heroId];
+        renderCart();
+        updateHeroControls();
+      }
+    });
+
+    document.getElementById('heroStepPlus').addEventListener('click', () => {
+      addToCart(heroId, 1);
+      updateHeroControls();
+    });
+
+    /* ============================================================
+       QUICK-ADD GRID
+    ============================================================ */
+    function renderGrid() {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+
+      PRODUCTS.filter(p => p.id !== heroId).forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card' + (p.comingSoon ? ' coming-soon-card out-of-stock' : (p.inStock ? '' : ' out-of-stock'));
+        card.dataset.id = p.id;
+
+        const inCart = cart[p.id] || 0;
+
+        // Bottom control: stepper if in cart, add button if not, disabled if OOS
+        let bottomControl;
+        if (p.comingSoon) {
+          bottomControl = `<button class="btn-coming-soon" disabled aria-label="${p.name} coming soon">Coming Soon</button>`;
+        } else if (!p.inStock) {
+          bottomControl = `<button class="btn-quick-add" data-id="${p.id}" disabled aria-label="${p.name} out of stock">Out of stock</button>`;
+        } else if (inCart > 0) {
+          bottomControl = `
+            <div class="card-stepper" data-id="${p.id}">
+              <button class="card-stepper__btn card-stepper__minus" data-id="${p.id}" aria-label="Remove one ${p.name}">−</button>
+              <span class="card-stepper__qty">${inCart}</span>
+              <button class="card-stepper__btn card-stepper__plus" data-id="${p.id}" aria-label="Add one more ${p.name}">+</button>
+            </div>`;
+        } else {
+          bottomControl = `<button class="btn-quick-add" data-id="${p.id}" aria-label="Add ${p.name} to cart">+ Add</button>`;
+        }
+
+        card.innerHTML = `
+          <div class="card-image">
+            <img src="${p.imgThumb}" alt="${p.name}" loading="lazy" />
+            ${p.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
+          </div>
+          <div class="card-body">
+            <div class="card-name">${p.name}</div>
+            <div class="card-price">${fmt(p.price)}</div>
+            ${bottomControl}
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+
+      // Tap anywhere on an in-stock card with NO stepper → add to cart
+      grid.querySelectorAll('.product-card:not(.out-of-stock)').forEach(card => {
+        card.addEventListener('click', (e) => {
+          // If the click was on a stepper button, let those handlers deal with it
+          if (e.target.closest('.card-stepper')) return;
+          const id = card.dataset.id;
+          addToCart(id, 1);
+          renderGrid();
+          showFlash(PRODUCTS.find(p => p.id === id).name + ' added to cart');
+          scrollToCartBar();
+        });
+      });
+
+      // Stepper + button
+      grid.querySelectorAll('.card-stepper__plus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = btn.dataset.id;
+          addToCart(id, 1);
+          renderGrid();
+        });
+      });
+
+      // Stepper − button
+      grid.querySelectorAll('.card-stepper__minus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = btn.dataset.id;
+          if (cart[id] > 1) {
+            cart[id]--;
+          } else {
+            delete cart[id];
+          }
+          renderCart();
+          renderGrid();
+          updateHeroControls();
+        });
+      });
+    }
+
+    /* ============================================================
+       CART OPERATIONS
+    ============================================================ */
+    function addToCart(id, qty) {
+      cart[id] = (cart[id] || 0) + qty;
+      renderCart();
+    }
+
+    function removeFromCart(id) {
+      delete cart[id];
+      renderCart();
+      renderGrid();
+      if (id === heroId) updateHeroControls();
+    }
+
+    function renderCart() {
+      const subtotal = cartSubtotal();
+      const shipping = cartShipping();
+      const total    = cartTotal(subtotal);
+      const count    = cartItemCount();
+      const items    = Object.entries(cart).map(([id, qty]) => ({
+        product: PRODUCTS.find(p => p.id === id),
+        qty
+      })).filter(x => x.product);
+
+      // Update all cart UIs
+      renderCartItems('sidebarItemsList', items);
+      renderCartItems('drawerItemsList', items);
+
+      // Badges
+      document.getElementById('sidebarBadge').textContent = count;
+      document.getElementById('drawerBadge').textContent  = count;
+
+      // Empty messages
+      document.getElementById('sidebarEmpty').style.display = count === 0 ? '' : 'none';
+
+      // Totals visibility
+      const showTotals = count > 0;
+      document.getElementById('sidebarTotals').style.display = showTotals ? '' : 'none';
+      document.getElementById('drawerTotals').style.display  = showTotals ? '' : 'none';
+
+      if (showTotals) {
+        // Sidebar totals
+        document.getElementById('sidebarSubtotal').textContent = fmt(subtotal);
+        document.getElementById('drawerSubtotal').textContent  = fmt(subtotal);
+
+        // Shipping = Aus Post postage + $10 handling, always one combined number
+        document.getElementById('sidebarShippingRow').style.display = '';
+        document.getElementById('drawerShippingRow').style.display  = '';
+        document.getElementById('sidebarShipping').textContent = fmt(shipping);
+        document.getElementById('drawerShipping').textContent  = fmt(shipping);
+
+        // Show a small note explaining what's included
+        document.getElementById('sidebarShippingMsg').style.display = '';
+        document.getElementById('drawerShippingMsg').style.display  = '';
+        document.getElementById('sidebarShippingMsg').className = 'totals-row';
+        document.getElementById('drawerShippingMsg').className  = 'totals-row';
+        const postageAmt = fmt(cartPostageOnly());
+        const noteHtml = `<span style="font-size:11px;color:var(--text-light)">Aus Post ${postageAmt} + $5.00 handling</span>`;
+        document.getElementById('sidebarShippingMsg').innerHTML = noteHtml;
+        document.getElementById('drawerShippingMsg').innerHTML  = noteHtml;
+
+        // Discount row
+        const discountAmt = cartDiscountAmount(subtotal);
+        ['sidebar', 'drawer'].forEach(prefix => {
+          let discRow = document.getElementById(prefix + 'DiscountRow');
+          if (discountAmt > 0) {
+            if (!discRow) {
+              discRow = document.createElement('div');
+              discRow.id = prefix + 'DiscountRow';
+              discRow.className = 'totals-row discount-row';
+              const totalRow = document.getElementById(prefix + 'Total').closest('.totals-row');
+              totalRow.parentNode.insertBefore(discRow, totalRow);
+            }
+            discRow.innerHTML = `<span>Discount (${appliedDiscount.code})</span><span style="color:var(--green-dark)">-${fmt(discountAmt)}</span>`;
+            discRow.style.display = '';
+          } else if (discRow) {
+            discRow.style.display = 'none';
+          }
+        });
+
+        document.getElementById('sidebarTotal').textContent = fmt(total);
+        document.getElementById('drawerTotal').textContent  = fmt(total);
+      }
+
+      // Checkout buttons
+      const canCheckout = count > 0;
+      document.getElementById('sidebarCheckoutBtn').disabled  = !canCheckout;
+      document.getElementById('drawerCheckoutBtn').disabled   = !canCheckout;
+      document.getElementById('mobileCheckoutBtn').disabled   = !canCheckout;
+
+      // Mobile bar
+      document.getElementById('mobileCartText').textContent  = count + (count === 1 ? ' item' : ' items');
+      document.getElementById('mobileCartTotal').textContent = fmt(total);
+    }
+
+    function renderCartItems(listId, items) {
+      const list = document.getElementById(listId);
+      list.innerHTML = '';
+      items.forEach(({ product: p, qty }) => {
+        const li = document.createElement('li');
+        li.className = 'cart-item';
+        li.innerHTML = `
+          <img class="cart-item-img" src="${p.imgThumb}" alt="${p.name}" />
+          <div class="cart-item-info">
+            <div class="cart-item-name">${p.name}</div>
+            <div class="cart-item-qty-price">x${qty} &mdash; ${fmt(p.price * qty)}</div>
+          </div>
+          <button class="cart-item-remove" data-id="${p.id}" aria-label="Remove ${p.name}">×</button>
+        `;
+        list.appendChild(li);
+      });
+
+      list.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', () => removeFromCart(btn.dataset.id));
+      });
+    }
+
+    /* ============================================================
+       MOBILE DRAWER
+    ============================================================ */
+    const overlay = document.getElementById('cartDrawerOverlay');
+    const drawer  = document.getElementById('cartDrawer');
+
+    function openDrawer() {
+      overlay.classList.add('open');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      overlay.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('mobileCartBarInfo').addEventListener('click', openDrawer);
+    document.getElementById('mobileCartBarInfo').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') openDrawer();
+    });
+    overlay.addEventListener('click', closeDrawer);
+
+    /* ============================================================
+       CHECKOUT
+    ============================================================ */
+    function buildPayload(customer) {
+      const subtotal = cartSubtotal();
+      const shipping = cartShipping();
+      const total    = cartTotal(subtotal);
+      const count    = cartItemCount();
+
+      const cartItems = Object.entries(cart).map(([id, qty]) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        return {
+          product_id:   id,
+          product_name: p.name,
+          price:        p.price,
+          quantity:     qty,
+          line_total:   parseFloat((p.price * qty).toFixed(2)),
+        };
+      });
+
+      const discountAmt = cartDiscountAmount(subtotal);
+
+      return {
+        customer_name:    customer ? customer.name  : '',
+        customer_email:   customer ? customer.email : '',
+        customer_phone:   customer ? customer.phone : '',
+        promo_code:       appliedDiscount ? appliedDiscount.code : null,
+        source:           'shop.mypolongaorchard.com.au',
+        referrer_product: heroId,
+        utm_source:       getParam('utm_source'),
+        utm_medium:       getParam('utm_medium'),
+        utm_campaign:     getParam('utm_campaign'),
+        cart:             cartItems,
+        order_summary: {
+          item_count:    count,
+          subtotal:      parseFloat(subtotal.toFixed(2)),
+          discount:      parseFloat(discountAmt.toFixed(2)),
+          shipping:      parseFloat(shipping.toFixed(2)),
+          shipping_note: `$${auspostRate(cartTotalWeight()).toFixed(2)} Aus Post postage + $${HANDLING_FEE.toFixed(2)} handling`,
+          total:         parseFloat(total.toFixed(2)),
+        },
+      };
+    }
+
+    /* ============================================================
+       CONTACT MODAL LOGIC
+    ============================================================ */
+    function openContactModal() {
+      if (cartItemCount() === 0) return;
+      closeDrawer();
+      document.getElementById('contactModalBackdrop').classList.add('show');
+      // Focus first field for accessibility
+      setTimeout(() => document.getElementById('contactName').focus(), 100);
+    }
+
+    function closeContactModal() {
+      document.getElementById('contactModalBackdrop').classList.remove('show');
+    }
+
+    document.getElementById('contactModalClose').addEventListener('click', closeContactModal);
+
+    // Close on backdrop tap
+    document.getElementById('contactModalBackdrop').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('contactModalBackdrop')) closeContactModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeContactModal();
+    });
+
+    function validateContactForm() {
+      let valid = true;
+      const name  = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+
+      // Name
+      const nameErr = document.getElementById('contactNameError');
+      if (!name) {
+        document.getElementById('contactName').classList.add('error');
+        nameErr.classList.add('show');
+        valid = false;
+      } else {
+        document.getElementById('contactName').classList.remove('error');
+        nameErr.classList.remove('show');
+      }
+
+      // Email
+      const emailErr = document.getElementById('contactEmailError');
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        document.getElementById('contactEmail').classList.add('error');
+        emailErr.classList.add('show');
+        valid = false;
+      } else {
+        document.getElementById('contactEmail').classList.remove('error');
+        emailErr.classList.remove('show');
+      }
+
+      // Phone — required
+      const phoneErr = document.getElementById('contactPhoneError');
+      if (!phone) {
+        document.getElementById('contactPhone').classList.add('error');
+        phoneErr.classList.add('show');
+        valid = false;
+      } else {
+        document.getElementById('contactPhone').classList.remove('error');
+        phoneErr.classList.remove('show');
+      }
+
+      return valid;
+    }
+
+    /* ============================================================
+       PROMO CODE VALIDATION
+    ============================================================ */
+    document.getElementById('promoCode').addEventListener('input', () => {
+      // Uppercase as they type
+      const inp = document.getElementById('promoCode');
+      const pos = inp.selectionStart;
+      inp.value = inp.value.toUpperCase();
+      inp.setSelectionRange(pos, pos);
+
+      // If they clear the code, remove any applied discount
+      if (!inp.value.trim() && appliedDiscount) {
+        appliedDiscount = null;
+        renderCart();
+        setPromoFeedback('', '');
+      }
+    });
+
+    document.getElementById('applyPromoBtn').addEventListener('click', async () => {
+      const code  = document.getElementById('promoCode').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+
+      if (!code) {
+        setPromoFeedback('error', 'Please enter a discount code.');
+        return;
+      }
+
+      // Email is needed to check single-use — prompt if missing
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setPromoFeedback('error', 'Please enter your email address above first.');
+        document.getElementById('contactEmail').focus();
+        return;
+      }
+
+      setPromoFeedback('loading', 'Checking code…');
+      document.getElementById('applyPromoBtn').disabled = true;
+
+      try {
+        const res = await fetch(VALIDATE_PROMO_URL, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ code, email }),
+        });
+        const data = await res.json();
+
+        if (data.valid) {
+          appliedDiscount = {
+            code,
+            type:       data.discount_type  || 'percentage',
+            value:      data.discount_value || 10,
+            applies_to: data.applies_to     || 'subtotal',
+          };
+          renderCart();
+          const discAmt = cartDiscountAmount(cartSubtotal());
+          setPromoFeedback('success', `✓ ${appliedDiscount.value}% discount applied — saving ${fmt(discAmt)}!`);
+        } else {
+          appliedDiscount = null;
+          renderCart();
+          setPromoFeedback('error', data.reason || 'Invalid discount code.');
+        }
+      } catch (err) {
+        setPromoFeedback('error', 'Could not verify code. Please try again.');
+        console.warn('Promo validation error:', err);
+      } finally {
+        document.getElementById('applyPromoBtn').disabled = false;
+      }
+    });
+
+    function setPromoFeedback(type, msg) {
+      const el = document.getElementById('promoFeedback');
+      el.className = 'promo-feedback' + (type ? ' ' + type : '');
+      el.textContent = msg;
+    }
+
+    document.getElementById('contactSubmitBtn').addEventListener('click', async () => {
+      if (!validateContactForm()) return;
+
+      const customer = {
+        name:  document.getElementById('contactName').value.trim(),
+        email: document.getElementById('contactEmail').value.trim(),
+        phone: document.getElementById('contactPhone').value.trim(),
+      };
+
+      closeContactModal();
+      await handleCheckout(customer);
+    });
+
+    async function handleCheckout(customer) {
+      if (cartItemCount() === 0) return;
+
+      const overlay = document.getElementById('checkoutOverlay');
+      overlay.classList.add('show');
+
+      const payload = buildPayload(customer);
+
+      try {
+        await fetch(WEBHOOK_URL, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload),
+          keepalive: true,
+        });
+      } catch (err) {
+        console.warn('Webhook error:', err);
+      }
+
+      // Redirect to payment page
+      window.location.href = REDIRECT_URL;
+    }
+
+    document.getElementById('sidebarCheckoutBtn').addEventListener('click', openContactModal);
+    document.getElementById('drawerCheckoutBtn').addEventListener('click', openContactModal);
+    document.getElementById('mobileCheckoutBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openContactModal();
+    });
+
+    /* ============================================================
+       FLASH NOTIFICATION
+    ============================================================ */
+    let flashTimer = null;
+
+    function showFlash(msg) {
+      const el = document.getElementById('flashNotice');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    }
+
+    /* ============================================================
+       SCROLL TO CART BAR (mobile)
+    ============================================================ */
+    function scrollToCartBar() {
+      if (window.innerWidth < 768) {
+        // Animate the mobile bar briefly to draw attention
+        const bar = document.getElementById('mobileCartBar');
+        bar.style.transition = 'background 0.2s';
+        bar.style.background = '#5a8a0f';
+        setTimeout(() => {
+          bar.style.background = '';
+        }, 400);
+      }
+    }
+
+    /* ============================================================
+       INITIALISE
+    ============================================================ */
+    function init() {
+      heroId = getHeroProductId();
+      renderHero();
+      renderGrid();
+      renderCart();
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Ignore working/source files — only shop files go to GitHub
+*.py
+*.pdf
+*.md
+*.pptx
+*.json
+*.log
+
+# Raw/source images (keep only the optimised /images/ folder)
+*.png
+*.jpg
+*.webp
+!images/*.webp
+
+# Misc
+*.txt
+__pycache__/
+.DS_Store
