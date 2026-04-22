@@ -11,6 +11,7 @@
 *.jpg
 *.webp
 !images/*.webp
+!images/*.jpg
 
 # Misc
 *.txt

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Mypo Orchard Gift Box — $95 Delivered | Mypolonga Orchard</title>
+  <meta name="description" content="A beautifully curated matte-black gift box packed with $86 of premium South Australian dried stonefruit, artisan jam, and cocktail garnishes. $95 delivered Australia-wide. Perfect for Mother's Day." />
+  <meta property="og:title" content="The Mypo Orchard Gift Box — $95 Delivered" />
+  <meta property="og:description" content="Give her the taste of the Murraylands. $86 of premium produce, beautifully boxed and delivered for $95." />
+  <meta property="og:image" content="images/giftbox_hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #1a1a1a;
+      --dark: #2c2c2c;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #faf6f0;
+      --warm-white: #fffdf9;
+      --green: #3a5a3a;
+      --text: #3d3d3d;
+      --text-light: #6b6b6b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--warm-white);
+      line-height: 1.7;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement-bar {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--black);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/giftbox_hero.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.45);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 80px 60px;
+    }
+    .hero-eyebrow {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.15rem;
+      margin-bottom: 36px;
+      max-width: 560px;
+      font-weight: 300;
+    }
+    .hero-price-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .hero-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .hero-price-note {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .hero-price-note strong { color: #fff; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 18px 44px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .hero-trust {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--text);
+      max-width: 680px;
+      line-height: 1.85;
+    }
+
+    /* ── WHY THIS GIFT ── */
+    .why-section { background: var(--cream); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .why-image img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    /* ── VALUE STACK ── */
+    .value-section { background: var(--black); }
+    .value-section .section-title { color: #fff; }
+    .value-section .section-eyebrow { color: var(--gold); }
+    .value-section .section-body { color: rgba(255,255,255,0.7); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .product-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .product-card:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .product-card.bonus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .product-card .bonus-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .product-icon { font-size: 2rem; margin-bottom: 12px; }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .product-desc { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
+    .product-value { font-size: 0.8rem; color: var(--gold); font-weight: 700; letter-spacing: 0.06em; }
+
+    .value-total-bar {
+      margin-top: 50px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 30px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .value-total-left .label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .value-total-left .amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: line-through;
+    }
+    .value-total-right .label {
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .value-total-right .amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .value-total-right .note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+    .value-cta { margin-top: 40px; text-align: center; }
+
+    /* ── DRAKES SECTION ── */
+    .drakes-section { background: var(--green); }
+    .drakes-section .section-title { color: #fff; }
+    .drakes-section .section-eyebrow { color: var(--gold-light); }
+    .drakes-section .section-body { color: rgba(255,255,255,0.8); }
+    .drakes-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 10px 22px;
+      margin-top: 30px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    /* ── LIFESTYLE ── */
+    .lifestyle-section { background: var(--cream); }
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .lifestyle-image img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .lifestyle-features { list-style: none; margin-top: 30px; }
+    .lifestyle-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+    .lifestyle-features li .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .lifestyle-features li .text strong { display: block; color: var(--black); font-size: 1rem; margin-bottom: 2px; }
+    .lifestyle-features li .text span { color: var(--text-light); font-size: 0.9rem; }
+
+    /* ── GUARANTEE ── */
+    .guarantee-section { background: var(--warm-white); }
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 50px;
+    }
+    .guarantee-card { text-align: center; padding: 40px 30px; }
+    .guarantee-card .g-icon { font-size: 2.8rem; margin-bottom: 18px; }
+    .guarantee-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .guarantee-card p { font-size: 0.92rem; color: var(--text-light); line-height: 1.7; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--black);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .final-cta .section-eyebrow { color: var(--gold); }
+    .final-cta .section-title { color: #fff; margin: 0 auto 20px; }
+    .final-cta .section-body { color: rgba(255,255,255,0.65); margin: 0 auto 40px; text-align: center; }
+    .final-cta .price-display {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .final-cta .price-note {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+    }
+    .final-cta .urgency {
+      margin-top: 24px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 60px 24px; }
+      .why-grid, .lifestyle-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .guarantee-grid { grid-template-columns: 1fr; }
+      .value-total-bar { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    🍑 &nbsp; Mother's Day is coming — order now for guaranteed delivery &nbsp; 🍑
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.mypolongaorchard.com.au" class="nav-logo">Mypolonga Orchard</a>
+    <div class="nav-links">
+      <a href="https://shop.mypolongaorchard.com.au">Shop</a>
+      <a href="https://www.mypolongaorchard.com.au/the-thomson-family-kitchen-guide/">Free Recipe Guide</a>
+      <a href="https://www.mypolongaorchard.com.au">Our Story</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Mother's Day Gift · Murraylands, South Australia</p>
+      <h1>Give Her the <span>Taste of the Murraylands</span> This Mother's Day.</h1>
+      <p class="hero-sub">A beautifully curated, matte-black gift box packed with $86 of premium, sun-dried South Australian stonefruit, artisan jam, and cocktail garnishes. Delivered straight to her door.</p>
+      <div class="hero-price-block">
+        <div class="hero-price">$95</div>
+        <div class="hero-price-note">
+          <strong>Free Australia-Wide Shipping Included</strong><br>
+          $86 of premium produce · Luxury gift box & ribbon
+        </div>
+      </div>
+      <a href="#order" class="btn-primary">Order the Mypo Orchard Gift Box</a>
+      <p class="hero-trust">Grown &amp; Packed by the Thomson Family · Mypolonga, SA · Since 1985</p>
+    </div>
+  </section>
+
+  <!-- WHY THIS GIFT -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <p class="section-eyebrow">The Gift She'll Actually Love</p>
+          <h2 class="section-title">Not Just Another Box of Chocolates.</h2>
+          <p class="section-body">Finding a Mother's Day gift that feels genuinely thoughtful is hard. You want something luxurious, but also something she will actually use and enjoy — not something that sits in a drawer.</p>
+          <br>
+          <p class="section-body">The Mypo Orchard Gift Box is exactly that. We've taken the absolute best produce from our family farm on the Murray River — the same premium dried apricots and peaches you may have seen in Drakes Supermarkets — and curated them into a stunning, ribbon-tied matte black gift box.</p>
+          <br>
+          <p class="section-body">It's a taste of South Australian sunshine, packed with artisan treats she can enjoy on a cheese board, in her baking, or simply as a healthy, premium snack. A gift that tells a story.</p>
+          <br>
+          <a href="#order" class="btn-primary">Get the Gift Box — $95 Delivered</a>
+        </div>
+        <div class="why-image">
+          <img src="images/giftbox_open.jpg" alt="Mypo Orchard Gift Box open showing all six premium products" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STACK -->
+  <section class="value-section" id="whats-inside">
+    <div class="container">
+      <p class="section-eyebrow">What's Inside</p>
+      <h2 class="section-title">Unboxing the Murraylands: Six Premium Products.</h2>
+      <p class="section-body">Every box is hand-packed at our orchard and includes six of our most popular, premium products — each one grown or made by the Thomson family.</p>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">🍑</div>
+          <div class="product-name">Rivergum Treats Dried Apricots</div>
+          <div class="product-desc">330g · Our signature product. Plump, vibrant, and intensely flavoured. Exclusive online this year.</div>
+          <div class="product-value">VALUE $20.00</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🍑</div>
+          <div class="product-name">Rivergum Treats Dried Peaches</div>
+          <div class="product-desc">330g · Sweet, chewy, and perfect for snacking, baking, or adding to a cheese board.</div>
+          <div class="product-value">VALUE $20.00</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🍊</div>
+          <div class="product-name">Mypolonga Orchard Dried Nectarines</div>
+          <div class="product-desc">330g · A rare treat with a beautiful, tangy-sweet profile. Hard to find anywhere else.</div>
+          <div class="product-value">VALUE $16.00</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🫙</div>
+          <div class="product-name">Artisan Apricot Jam</div>
+          <div class="product-desc">300ml · Fruit-first, small-batch jam. The ultimate addition to her morning toast or a baked Brie.</div>
+          <div class="product-value">VALUE $6.00</div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🍋</div>
+          <div class="product-name">Dried Citrus Cocktail Mix</div>
+          <div class="product-desc">75g · A beautiful blend of dehydrated oranges, lemons, and limes. Perfect for garnishing her favourite gin or cocktail.</div>
+          <div class="product-value">VALUE $12.00</div>
+        </div>
+        <div class="product-card bonus">
+          <span class="bonus-tag">Bonus Included</span>
+          <div class="product-icon">🍊</div>
+          <div class="product-name">Dehydrated Orange Slices</div>
+          <div class="product-desc">75g · Extra citrus for winter teas, baking decoration, or snacking. A beautiful bonus addition.</div>
+          <div class="product-value">VALUE $12.00</div>
+        </div>
+      </div>
+
+      <div class="value-total-bar">
+        <div class="value-total-left">
+          <div class="label">Total Product Value</div>
+          <div class="amount">$86.00</div>
+        </div>
+        <div style="color: rgba(255,255,255,0.2); font-size: 2rem;">+</div>
+        <div style="color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6;">
+          Luxury matte black gift box<br>
+          Premium black satin ribbon<br>
+          Natural straw packing<br>
+          Australia-wide shipping
+        </div>
+        <div style="color: rgba(255,255,255,0.2); font-size: 2rem;">=</div>
+        <div class="value-total-right">
+          <div class="label">Your Price — Everything Included</div>
+          <div class="amount">$95.00</div>
+          <div class="note">Free shipping · No hidden fees at checkout</div>
+        </div>
+      </div>
+
+      <div class="value-cta">
+        <a href="#order" class="btn-primary">Order the Gift Box Now — $95 Delivered</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRAKES SECTION -->
+  <section class="drakes-section">
+    <div class="container">
+      <p class="section-eyebrow">Exclusive Online This Year</p>
+      <h2 class="section-title">Love Rivergum Treats from Drakes? This is the Only Way to Get Them.</h2>
+      <p class="section-body">If you've bought our famous Rivergum Treats dried apricots or peaches from Drakes Supermarkets in the past, you already know the quality we stand for.</p>
+      <br>
+      <p class="section-body">This year, our premium Rivergum Treats range is <strong style="color:#fff;">exclusive to our online store</strong> and featured entirely within this gift box. You won't find these 330g premium packs on supermarket shelves right now — the only way to get them is directly from us.</p>
+      <br>
+      <p class="section-body">If she loves our fruit, this is the ultimate way to surprise her this Mother's Day.</p>
+      <div class="drakes-badge">
+        🌿 &nbsp; Direct from the Thomson Family Farm · Mypolonga, SA · Since 1985
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section class="lifestyle-section">
+    <div class="container">
+      <div class="lifestyle-grid">
+        <div class="lifestyle-image">
+          <img src="images/giftbox_lifestyle.jpg" alt="Cheese board styled with Mypolonga Orchard dried fruit, apricot jam, and dehydrated citrus" />
+        </div>
+        <div class="lifestyle-text">
+          <p class="section-eyebrow">A Gift She'll Actually Use</p>
+          <h2 class="section-title">Hand-Packed and Shipped with Care.</h2>
+          <p class="section-body">We take pride in every box we send. From the moment she opens it to the last piece of dried fruit, the Mypo Orchard Gift Box is designed to delight.</p>
+          <ul class="lifestyle-features">
+            <li>
+              <div class="icon">📦</div>
+              <div class="text">
+                <strong>Free Australia-Wide Shipping</strong>
+                <span>The $95 price is all-inclusive. No surprise fees at checkout.</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon">🎀</div>
+              <div class="text">
+                <strong>Beautifully Presented</strong>
+                <span>Matte black box, premium ribbon, natural straw packing, and the Mypolonga Orchard crest seal.</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon">🌿</div>
+              <div class="text">
+                <strong>Direct from the Farm</strong>
+                <span>You're buying directly from the Thomson family. No middlemen — just honest South Australian produce.</span>
+              </div>
+            </li>
+            <li>
+              <div class="icon">🍑</div>
+              <div class="text">
+                <strong>Premium, Natural Ingredients</strong>
+                <span>No artificial colours, no preservatives, no nasties. Just real fruit, grown on the Murray River.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee-section">
+    <div class="container">
+      <div style="text-align:center; max-width: 600px; margin: 0 auto;">
+        <p class="section-eyebrow">Our Promise to You</p>
+        <h2 class="section-title">Order with Confidence.</h2>
+      </div>
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <div class="g-icon">🚚</div>
+          <h3>Free Shipping Included</h3>
+          <p>$95 is the total price — everything included. No hidden postage fees, no handling charges. What you see is what you pay.</p>
+        </div>
+        <div class="guarantee-card">
+          <div class="g-icon">🌿</div>
+          <h3>Premium Quality Guaranteed</h3>
+          <p>Every product in this box is grown or made by the Thomson family. We've been farming in Mypolonga since 1985 — our reputation is everything.</p>
+        </div>
+        <div class="guarantee-card">
+          <div class="g-icon">🎁</div>
+          <h3>Gift-Ready Presentation</h3>
+          <p>Your box arrives beautifully packed and ready to give. No wrapping required — just hand it over and watch her face light up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="order">
+    <div class="container">
+      <p class="section-eyebrow">Order Now · Limited Stock Available</p>
+      <h2 class="section-title" style="max-width:700px;">Make This Mother's Day One She'll Remember.</h2>
+      <p class="section-body">Skip the generic chocolates and wilted flowers. Give her a genuine taste of South Australia, direct from our family farm to her door.</p>
+      <div class="price-display">$95</div>
+      <div class="price-note">Includes all 6 premium products · Luxury gift box · Free Australia-wide shipping</div>
+      <a href="https://shop.mypolongaorchard.com.au" class="btn-primary">Order the Mypo Orchard Gift Box Now</a>
+      <p class="urgency">Order by [DATE] to guarantee delivery before Mother's Day · Sunday 11 May</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Mypolonga Orchard · Thomson Family Farm · Mypolonga, SA · <a href="https://www.mypolongaorchard.com.au">mypolongaorchard.com.au</a></p>
+    <p style="margin-top:8px;"><a href="https://www.mypolongaorchard.com.au/the-thomson-family-kitchen-guide/">Get Our Free Thomson Family Kitchen Guide</a></p>
+  </footer>
+
+</body>
+</html>
