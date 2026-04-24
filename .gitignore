@@ -3,8 +3,15 @@
 *.pdf
 *.md
 *.pptx
-*.json
 *.log
+
+# JSON files ignored by default — but allow netlify functions package files
+*.json
+!netlify/functions/package.json
+!netlify/functions/package-lock.json
+
+# Exclude node_modules
+node_modules/
 
 # Raw/source images (keep only the optimised /images/ folder)
 *.png
