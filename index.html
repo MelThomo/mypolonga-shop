@@ -1322,7 +1322,7 @@
     ============================================================ */
     const WEBHOOK_URL        = 'https://mypo-orchard-crm.manus.space/api/webhooks/orders';
     const VALIDATE_PROMO_URL = 'https://mypo-orchard-crm.manus.space/api/discounts/validate';
-    const REDIRECT_URL       = 'https://REPLACE_WITH_PAYMENT_PAGE_URL'; // ← REPLACE THIS
+    const STRIPE_CHECKOUT_URL = '/api/create-checkout';
 
     // ---- SHIPPING CONFIGURATION ----
     // Every order is charged: Aus Post postage (item-count based) + $5 handling
@@ -2029,19 +2029,46 @@
 
       const payload = buildPayload(customer);
 
+      // Fire-and-forget CRM webhook (don't block checkout on this)
+      fetch(WEBHOOK_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+        keepalive: true,
+      }).catch(err => console.warn('Webhook error:', err));
+
+      // Build Stripe-compatible cart
+      const stripeCart = Object.entries(cart).map(([id, qty]) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        return { id, name: p.name, tagline: p.tagline || '', price: p.price, qty };
+      });
+
       try {
-        await fetch(WEBHOOK_URL, {
+        const res = await fetch(STRIPE_CHECKOUT_URL, {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify(payload),
-          keepalive: true,
+          body: JSON.stringify({
+            cart:           stripeCart,
+            order_summary:  payload.order_summary,
+            customer_name:  customer.name,
+            customer_email: customer.email,
+          }),
         });
-      } catch (err) {
-        console.warn('Webhook error:', err);
-      }
 
-      // Redirect to payment page
-      window.location.href = REDIRECT_URL;
+        const data = await res.json();
+
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          overlay.classList.remove('show');
+          alert('Sorry, there was a problem starting checkout. Please try again.');
+          console.error('Stripe error:', data);
+        }
+      } catch (err) {
+        overlay.classList.remove('show');
+        alert('Sorry, there was a connection problem. Please try again.');
+        console.error('Checkout error:', err);
+      }
     }
 
     document.getElementById('sidebarCheckoutBtn').addEventListener('click', openContactModal);
