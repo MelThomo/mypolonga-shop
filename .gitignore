@@ -5,8 +5,10 @@
 *.pptx
 *.log
 
-# JSON files ignored by default — but allow netlify functions package files
+# JSON files ignored by default — but allow root and netlify functions package files
 *.json
+!package.json
+!package-lock.json
 !netlify/functions/package.json
 !netlify/functions/package-lock.json
 

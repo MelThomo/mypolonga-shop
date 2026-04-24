@@ -1,0 +1,8 @@
+{
+  "name": "mypolonga-shop",
+  "version": "1.0.0",
+  "description": "Mypolonga Orchard online shop",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
