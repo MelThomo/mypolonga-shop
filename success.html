@@ -27,6 +27,15 @@
       max-width: 520px;
       width: 100%;
     }
+    .logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 24px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .tick {
       width: 80px;
       height: 80px;
@@ -36,8 +45,15 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 28px;
-      font-size: 40px;
-      color: #fff;
+    }
+    .tick svg {
+      width: 40px;
+      height: 40px;
+      stroke: #fff;
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     h1 {
       font-size: 28px;
@@ -60,6 +76,24 @@
       color: #4a5e10;
       font-weight: 600;
     }
+    .highlight-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      justify-content: center;
+    }
+    .highlight-row:last-child { margin-bottom: 0; }
+    .highlight-row svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      stroke: #4a5e10;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
     .btn {
       display: inline-block;
       background: #9BBF1B;
@@ -74,24 +108,43 @@
       transition: background 0.15s;
     }
     .btn:hover { background: #7a9a12; }
-    .logo {
-      width: 80px;
-      margin-bottom: 24px;
-    }
   </style>
 </head>
 <body>
   <div class="card">
-    <img class="logo" src="images/mypolonga-orchard-logo.webp" alt="Mypolonga Orchard" />
-    <div class="tick">✓</div>
+    <img class="logo" src="/images/mypolonga-orchard-logo.webp" alt="Mypolonga Orchard" />
+    <div class="tick">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
     <h1>Order Confirmed!</h1>
     <p>Thank you for your order from Mypolonga Orchard. The Thomson Family will get your parcel packed and on its way soon.</p>
     <div class="highlight">
-      📧 A confirmation email will be sent to you shortly.<br/>
-      📦 We ship Australia-wide via Aus Post.
+      <div class="highlight-row">
+        <!-- Envelope icon -->
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        <span>A confirmation email will be sent to you shortly.</span>
+      </div>
+      <div class="highlight-row">
+        <!-- Truck/shipping icon -->
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>We ship Australia-wide via Aus Post.</span>
+      </div>
     </div>
-    <p>Questions? Email us at <strong>jthomson@mypolonga.com.au</strong></p>
+    <p>Questions? Email us at <strong>mypolongaorchard@gmail.com</strong></p>
     <a class="btn" href="https://shop.mypolongaorchard.com.au/">Back to Shop</a>
   </div>
+  <script>
+    // Fire order notification emails as soon as the success page loads
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+      if (!sessionId) return;
+      fetch('/.netlify/functions/order-notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId }),
+      }).catch(function(err) { console.error('Notify error:', err); });
+    })();
+  </script>
 </body>
 </html>
