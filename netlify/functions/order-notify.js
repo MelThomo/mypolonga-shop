@@ -141,7 +141,7 @@ exports.handler = async (event) => {
 </html>`;
 
     const RESEND_KEY = process.env.RESEND_API_KEY;
-    const FROM_EMAIL = 'orders@mypolongaorchard.com.au';
+    const FROM_EMAIL = 'Mypo Orders <orders@mypolongaorchard.com.au>';
 
     const sendEmail = async (to, subject, html) => {
       const res = await fetch('https://api.resend.com/emails', {
