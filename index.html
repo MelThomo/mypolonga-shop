@@ -2030,21 +2030,13 @@
 
       const payload = buildPayload(customer);
 
-      // Fire-and-forget CRM webhooks (don't block checkout on these)
-      fetch(WEBHOOK_URL, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
-        keepalive: true,
-      }).catch(err => console.warn('Orders webhook error:', err));
-
-      // Also trigger abandoned cart sequence in CRM
+      // Trigger abandoned cart sequence in CRM (fires before Stripe so we capture
+      // the contact even if they don't complete payment)
       const abandonedPayload = {
         customer_name:  payload.customer_name,
         customer_email: payload.customer_email,
         customer_phone: payload.customer_phone,
-        items:          payload.cart,
-        order_summary:  payload.order_summary,
+        cart_url:       window.location.href,
       };
       fetch(ABANDONED_CART_URL, {
         method:  'POST',
@@ -2052,6 +2044,8 @@
         body:    JSON.stringify(abandonedPayload),
         keepalive: true,
       }).catch(err => console.warn('Abandoned cart webhook error:', err));
+
+      // NOTE: /api/webhooks/orders fires from success.html after confirmed payment only
 
       // Build Stripe-compatible cart
       const stripeCart = Object.entries(cart).map(([id, qty]) => {

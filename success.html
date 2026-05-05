@@ -134,16 +134,26 @@
     <a class="btn" href="https://shop.mypolongaorchard.com.au/">Back to Shop</a>
   </div>
   <script>
-    // Fire order notification emails as soon as the success page loads
+    // Fire on successful payment confirmation
     (function() {
       const params = new URLSearchParams(window.location.search);
       const sessionId = params.get('session_id');
       if (!sessionId) return;
+
+      // 1. Fire order notification emails (internal + customer confirmation)
       fetch('/.netlify/functions/order-notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ session_id: sessionId }),
       }).catch(function(err) { console.error('Notify error:', err); });
+
+      // 2. Fire CRM orders webhook — records the completed purchase and
+      //    automatically cancels any active abandoned cart sequence for this contact
+      fetch('/.netlify/functions/crm-order-complete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId }),
+      }).catch(function(err) { console.error('CRM orders error:', err); });
     })();
   </script>
 </body>
