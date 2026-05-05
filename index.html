@@ -1321,6 +1321,7 @@
        CONFIGURATION — REPLACE THESE VALUES BEFORE GOING LIVE
     ============================================================ */
     const WEBHOOK_URL        = 'https://mypo-orchard-crm.manus.space/api/webhooks/orders';
+    const ABANDONED_CART_URL = 'https://mypo-orchard-crm.manus.space/api/webhooks/abandoned-cart';
     const VALIDATE_PROMO_URL = 'https://mypo-orchard-crm.manus.space/api/discounts/validate';
     const STRIPE_CHECKOUT_URL = '/api/create-checkout';
 
@@ -2029,13 +2030,28 @@
 
       const payload = buildPayload(customer);
 
-      // Fire-and-forget CRM webhook (don't block checkout on this)
+      // Fire-and-forget CRM webhooks (don't block checkout on these)
       fetch(WEBHOOK_URL, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify(payload),
         keepalive: true,
-      }).catch(err => console.warn('Webhook error:', err));
+      }).catch(err => console.warn('Orders webhook error:', err));
+
+      // Also trigger abandoned cart sequence in CRM
+      const abandonedPayload = {
+        customer_name:  payload.customer_name,
+        customer_email: payload.customer_email,
+        customer_phone: payload.customer_phone,
+        items:          payload.cart,
+        order_summary:  payload.order_summary,
+      };
+      fetch(ABANDONED_CART_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(abandonedPayload),
+        keepalive: true,
+      }).catch(err => console.warn('Abandoned cart webhook error:', err));
 
       // Build Stripe-compatible cart
       const stripeCart = Object.entries(cart).map(([id, qty]) => {
