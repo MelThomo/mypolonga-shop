@@ -40,8 +40,8 @@ exports.handler = async (event) => {
         price_data: {
           currency: 'aud',
           product_data: {
-            name: 'Shipping & Handling',
-            description: order_summary.shipping_note || 'Aus Post postage + handling',
+            name: 'Australia Post Shipping & Handling',
+            description: null,
           },
           unit_amount: shippingAmount,
         },
