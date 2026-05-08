@@ -1448,7 +1448,7 @@
     }
 
     function getHeroProductId() {
-      const slug = getParam('product').toLowerCase().trim();
+      const slug = (getParam('focus') || getParam('product')).toLowerCase().trim();
       const match = PRODUCTS.find(p => p.id === slug);
       return match ? match.id : 'dried-apricots'; // default
     }
