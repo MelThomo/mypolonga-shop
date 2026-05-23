@@ -1644,7 +1644,11 @@
       const grid = document.getElementById('productGrid');
       grid.innerHTML = '';
 
-      PRODUCTS.filter(p => p.id !== heroId).forEach(p => {
+      const sortedProducts = PRODUCTS.filter(p => p.id !== heroId).sort((a, b) => {
+        const rank = p => p.inStock && !p.comingSoon ? 0 : p.comingSoon ? 2 : 1;
+        return rank(a) - rank(b);
+      });
+      sortedProducts.forEach(p => {
         const card = document.createElement('div');
         card.className = 'product-card' + (p.comingSoon ? ' coming-soon-card out-of-stock' : (p.inStock ? '' : ' out-of-stock'));
         card.dataset.id = p.id;
