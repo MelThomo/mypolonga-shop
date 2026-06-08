@@ -2110,6 +2110,7 @@
             order_summary:  payload.order_summary,
             customer_name:  customer.name,
             customer_email: customer.email,
+            promo_code:     appliedDiscount ? appliedDiscount.code : '',
           }),
         });
 

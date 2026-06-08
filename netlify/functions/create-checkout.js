@@ -13,7 +13,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Invalid JSON' };
   }
 
-  const { cart, order_summary, customer_name, customer_email } = body;
+  const { cart, order_summary, customer_name, customer_email, promo_code } = body;
 
   if (!cart || cart.length === 0) {
     return { statusCode: 400, body: 'Cart is empty' };
@@ -72,6 +72,8 @@ exports.handler = async (event) => {
         customer_name: customer_name || '',
         customer_email: customer_email || '',
         order_items: JSON.stringify(cart.map(i => `${i.qty}x ${i.name}`)),
+        promo_code: promo_code || '',
+        discount_amount: order_summary.discount ? String(order_summary.discount) : '',
       },
       billing_address_collection: 'required',
       shipping_address_collection: {

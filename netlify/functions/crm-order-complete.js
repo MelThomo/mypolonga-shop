@@ -45,14 +45,10 @@ exports.handler = async (event) => {
                     item.price?.product_data?.name === 'Australia Post Shipping & Handling');
     const shippingTotal = shippingItem ? parseFloat((shippingItem.amount_total / 100).toFixed(2)) : 0;
 
-    // Extract discount info from Stripe session
+    // Extract discount info — prefer metadata (set at checkout creation) as the reliable source
     const discountAmount = parseFloat(((session.total_details?.amount_discount || 0) / 100).toFixed(2));
-    const promoCode = (session.discounts && session.discounts.length > 0)
-      ? (session.discounts[0].promotion_code || session.discounts[0].coupon || null)
-      : null;
-    // Try to get the coupon source code name if available
-    const discountBreakdown = session.total_details?.breakdown?.discounts || [];
-    const couponSource = discountBreakdown[0]?.discount?.source?.coupon || null;
+    const promoCodeFromMeta = session.metadata?.promo_code || null;
+    const discountFromMeta  = session.metadata?.discount_amount ? parseFloat(session.metadata.discount_amount) : discountAmount;
 
     const subtotal = parseFloat(((session.amount_total / 100) + discountAmount - shippingTotal).toFixed(2));
     const total    = parseFloat((session.amount_total / 100).toFixed(2));
@@ -64,8 +60,8 @@ exports.handler = async (event) => {
       cart:           cartItems,
       order_summary: {
         subtotal:     subtotal,
-        discount:     discountAmount,
-        promo_code:   couponSource || promoCode || null,
+        discount:     discountFromMeta,
+        promo_code:   promoCodeFromMeta || null,
         shipping:     shippingTotal,
         total:        total,
       },
