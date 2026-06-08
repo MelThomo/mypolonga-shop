@@ -20,9 +20,9 @@ exports.handler = async (event) => {
   }
 
   try {
-    // Fetch the completed Stripe session with line items
+    // Fetch the completed Stripe session with line items and discount details
     const session = await stripe.checkout.sessions.retrieve(session_id, {
-      expand: ['line_items'],
+      expand: ['line_items', 'total_details.breakdown'],
     });
 
     if (session.payment_status !== 'paid') {
@@ -45,7 +45,16 @@ exports.handler = async (event) => {
                     item.price?.product_data?.name === 'Australia Post Shipping & Handling');
     const shippingTotal = shippingItem ? parseFloat((shippingItem.amount_total / 100).toFixed(2)) : 0;
 
-    const subtotal = parseFloat(((session.amount_total / 100) - shippingTotal).toFixed(2));
+    // Extract discount info from Stripe session
+    const discountAmount = parseFloat(((session.total_details?.amount_discount || 0) / 100).toFixed(2));
+    const promoCode = (session.discounts && session.discounts.length > 0)
+      ? (session.discounts[0].promotion_code || session.discounts[0].coupon || null)
+      : null;
+    // Try to get the coupon source code name if available
+    const discountBreakdown = session.total_details?.breakdown?.discounts || [];
+    const couponSource = discountBreakdown[0]?.discount?.source?.coupon || null;
+
+    const subtotal = parseFloat(((session.amount_total / 100) + discountAmount - shippingTotal).toFixed(2));
     const total    = parseFloat((session.amount_total / 100).toFixed(2));
 
     const crmPayload = {
@@ -54,9 +63,11 @@ exports.handler = async (event) => {
       customer_phone: session.customer_details?.phone || '',
       cart:           cartItems,
       order_summary: {
-        subtotal: subtotal,
-        shipping: shippingTotal,
-        total:    total,
+        subtotal:     subtotal,
+        discount:     discountAmount,
+        promo_code:   couponSource || promoCode || null,
+        shipping:     shippingTotal,
+        total:        total,
       },
     };
 
