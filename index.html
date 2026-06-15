@@ -1083,6 +1083,119 @@
       cursor: default;
     }
 
+    /* ============================================================
+       FREE GIFT PROMO BANNER
+    ============================================================ */
+    .free-gift-banner {
+      background: linear-gradient(135deg, #3B5E0A 0%, #5a8a12 100%);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .free-gift-banner::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .free-gift-banner-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .free-gift-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .free-gift-text {
+      flex: 1;
+    }
+
+    .free-gift-title {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+
+    .free-gift-subtitle {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    .free-gift-unlocked-label {
+      background: #C8E63A;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .free-gift-progress-wrap {
+      background: rgba(255,255,255,0.2);
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .free-gift-progress-bar {
+      height: 100%;
+      background: #C8E63A;
+      border-radius: 99px;
+      transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .free-gift-progress-label {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 6px;
+      text-align: right;
+    }
+
+    /* FREE badge on the citrus card */
+    .free-gift-card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: linear-gradient(135deg, #E8854A, #d4631e);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(232,133,74,0.5);
+      z-index: 3;
+      pointer-events: none;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Citrus card highlight when threshold met */
+    .product-card.free-gift-highlight {
+      border: 2px solid var(--orange) !important;
+      box-shadow: 0 0 0 3px rgba(232,133,74,0.18), var(--shadow);
+    }
+
   </style>
 </head>
 <body>
@@ -1148,6 +1261,22 @@
         </div>
         </div><!-- /.hero-inner -->
       </section>
+
+      <!-- FREE GIFT PROMO BANNER -->
+      <div class="free-gift-banner" id="freeGiftBanner">
+        <div class="free-gift-banner-top">
+          <span class="free-gift-icon">🎁</span>
+          <div class="free-gift-text">
+            <div class="free-gift-title" id="freeGiftTitle">FREE Citrus Dehydrated Fruit with orders over $100</div>
+            <div class="free-gift-subtitle" id="freeGiftSubtitle">Add $100.00 more to unlock your free pack</div>
+          </div>
+          <span class="free-gift-unlocked-label" id="freeGiftUnlockedLabel" style="display:none;">✓ Unlocked!</span>
+        </div>
+        <div class="free-gift-progress-wrap" id="freeGiftProgressWrap">
+          <div class="free-gift-progress-bar" id="freeGiftProgressBar" style="width:0%"></div>
+        </div>
+        <div class="free-gift-progress-label" id="freeGiftProgressLabel">$0 / $100</div>
+      </div>
 
       <!-- SECTION B: QUICK-ADD GRID -->
       <section class="quick-add-section" aria-label="Add more products">
@@ -1466,7 +1595,7 @@
         id:          'minced-apricots',
         name:        'Minced Dried Apricots 500g',
         tagline:     'Available in 500g bag — ready to use in baking and savoury dishes.',
-        price:       13.50,
+        price:       20.00,
         inStock:     false,
         weight:      500,
         imgFull:     'https://www.mypolongaorchard.com.au/wp-content/uploads/2024/07/minced-apricots-by-mypolonga-orcahrd.webp',
@@ -1672,10 +1801,17 @@
           bottomControl = `<button class="btn-quick-add" data-id="${p.id}" aria-label="Add ${p.name} to cart">+ Add</button>`;
         }
 
+        const isFreeGiftCard = p.id === 'citrus-dehydrated';
+        const freeGiftUnlocked = cartSubtotal() >= FREE_GIFT_THRESHOLD;
+        if (isFreeGiftCard && freeGiftUnlocked) {
+          card.classList.add('free-gift-highlight');
+        }
+
         card.innerHTML = `
-          <div class="card-image">
+          <div class="card-image" style="position:relative;">
             <img src="${p.imgThumb}" alt="${p.name}" loading="lazy" />
             ${p.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
+            ${isFreeGiftCard ? `<span class="free-gift-card-badge">${freeGiftUnlocked ? '🎁 FREE' : 'FREE\nover $100'}</span>` : ''}
           </div>
           <div class="card-body">
             <div class="card-name">${p.name}</div>
@@ -1728,6 +1864,33 @@
     }
 
     /* ============================================================
+       FREE GIFT PROMO
+    ============================================================ */
+    const FREE_GIFT_THRESHOLD = 100;
+
+    function updateFreeGiftBanner() {
+      const subtotal = cartSubtotal();
+      const pct = Math.min(100, (subtotal / FREE_GIFT_THRESHOLD) * 100);
+      const unlocked = subtotal >= FREE_GIFT_THRESHOLD;
+      const remaining = Math.max(0, FREE_GIFT_THRESHOLD - subtotal);
+
+      document.getElementById('freeGiftProgressBar').style.width = pct + '%';
+      document.getElementById('freeGiftProgressLabel').textContent = `$${subtotal.toFixed(0)} / $${FREE_GIFT_THRESHOLD}`;
+      document.getElementById('freeGiftUnlockedLabel').style.display = unlocked ? '' : 'none';
+      document.getElementById('freeGiftProgressWrap').style.display = unlocked ? 'none' : '';
+
+      if (unlocked) {
+        document.getElementById('freeGiftTitle').textContent = '🎉 Your free Citrus Dehydrated Fruit is included!';
+        document.getElementById('freeGiftSubtitle').textContent = 'We\'ll add a free pack to your order — no code needed.';
+        document.getElementById('freeGiftProgressLabel').style.display = 'none';
+      } else {
+        document.getElementById('freeGiftTitle').textContent = 'FREE Citrus Dehydrated Fruit with orders over $100';
+        document.getElementById('freeGiftSubtitle').textContent = `Spend $${remaining.toFixed(2)} more to unlock your free pack`;
+        document.getElementById('freeGiftProgressLabel').style.display = '';
+      }
+    }
+
+    /* ============================================================
        CART OPERATIONS
     ============================================================ */
     function addToCart(id, qty) {
@@ -1743,6 +1906,7 @@
     }
 
     function renderCart() {
+      updateFreeGiftBanner();
       const subtotal = cartSubtotal();
       const shipping = cartShipping();
       const total    = cartTotal(subtotal);
