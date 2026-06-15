@@ -1811,7 +1811,7 @@
           <div class="card-image" style="position:relative;">
             <img src="${p.imgThumb}" alt="${p.name}" loading="lazy" />
             ${p.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
-            ${isFreeGiftCard ? `<span class="free-gift-card-badge">${freeGiftUnlocked ? '🎁 FREE' : 'FREE\nover $100'}</span>` : ''}
+            ${false && isFreeGiftCard ? `<span class="free-gift-card-badge">${freeGiftUnlocked ? '🎁 FREE' : 'FREE\nover $100'}</span>` : ''}
           </div>
           <div class="card-body">
             <div class="card-name">${p.name}</div>
