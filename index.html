@@ -1802,8 +1802,8 @@
         }
 
         const isFreeGiftCard = p.id === 'citrus-dehydrated';
-        const freeGiftUnlocked = cartSubtotal() >= FREE_GIFT_THRESHOLD;
-        if (isFreeGiftCard && freeGiftUnlocked) {
+        const freeGiftUnlocked = false; // promo hidden — cartSubtotal() >= FREE_GIFT_THRESHOLD;
+        if (false && isFreeGiftCard && freeGiftUnlocked) {
           card.classList.add('free-gift-highlight');
         }
 
