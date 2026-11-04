@@ -521,6 +521,83 @@
       }
     }
 
+    /* Peach special — display only; packet photos and steppers stay unchanged */
+    .peach-sale-strip {
+      display: flex;
+      justify-content: center;
+      padding: 10px 8px;
+      background: #FFF7EF;
+      border-bottom: 1px solid #F0D6C3;
+    }
+    .peach-sale-strip[hidden] { display: none; }
+    .peach-sale-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 7px 17px;
+      border: 1px solid #B46B40;
+      border-radius: 999px;
+      background: #FFE4CF;
+      color: #783A20;
+      text-align: center;
+      line-height: 1.15;
+    }
+    .peach-sale-badge-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .peach-sale-badge-discount {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .peach-sale-strip--hero { padding: 12px 16px; }
+    .peach-sale-strip--hero .peach-sale-badge { padding: 8px 24px; }
+    .peach-sale-strip--hero .peach-sale-badge-label { font-size: 10px; }
+    .peach-sale-strip--hero .peach-sale-badge-discount { font-size: 26px; }
+    .peach-sale-price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 8px;
+    }
+    .peach-sale-price-old {
+      color: #766354;
+      font-size: 0.75em;
+      font-weight: 500;
+      text-decoration: line-through;
+    }
+    .peach-sale-price-current {
+      color: #783A20;
+      font-weight: 800;
+    }
+    .peach-sale-card .peach-sale-price-current { font-size: 20px; }
+    .peach-sale-saving {
+      display: block;
+      margin-top: 5px;
+      color: #783A20;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .peach-sale-card:not(.is-added) { border-color: #DFB08B; }
+    .peach-sale-card .btn-quick-add:not(:disabled),
+    .peach-sale-hero .btn-add-hero:not(.added) {
+      background: #FFDDBF;
+      border: 2px solid #B46B40;
+      color: #71341B;
+      padding: 6px 8px;
+      line-height: 1.2;
+    }
+    .peach-sale-card .btn-quick-add:hover:not(:disabled),
+    .peach-sale-hero .btn-add-hero:hover:not(.added) {
+      background: #FFD0A5;
+      border-color: #B46B40;
+      color: #71341B;
+    }
+
     /* Editorial, non-interactive range previews */
     .range-teasers {
       margin-bottom: 28px;
@@ -1352,6 +1429,7 @@
 
       <!-- SECTION A: HERO PRODUCT -->
       <section class="hero-section" id="heroSection" aria-label="Selected product">
+        <div class="peach-sale-strip peach-sale-strip--hero" id="heroSaleBadge" hidden></div>
         <div class="hero-inner">
         <div class="hero-image-wrap">
           <img id="heroImg" src="" alt="" loading="eager" />
@@ -1774,7 +1852,8 @@
         id:          'dried-peaches',
         name:        'Dried Peaches 300g',
         tagline:     'Available in 300g packs — velvety sweetness, perfect for snacking.',
-        price:       14.00,
+        price:       11.90,
+        compareAtPrice: 14.00,
         inStock:     true,
         weight:      300,
         imgFull:     'images/dried-peaches-front.webp',
@@ -1865,6 +1944,39 @@
       return '$' + n.toFixed(2);
     }
 
+    // Pure peach-sale display helpers. Checkout and cart totals still use p.price.
+    function getPeachSale(p) {
+      if (p.id !== 'dried-peaches' || !p.inStock || p.comingSoon ||
+          !Number.isFinite(p.price) || !Number.isFinite(p.compareAtPrice)) return null;
+      const priceCents = Math.round(p.price * 100);
+      const compareCents = Math.round(p.compareAtPrice * 100);
+      if (priceCents < 0 || compareCents <= priceCents) return null;
+      const savingCents = compareCents - priceCents;
+      return {
+        compareAtPrice: compareCents / 100,
+        saving: savingCents / 100,
+        percentOff: Math.round(savingCents / compareCents * 100),
+      };
+    }
+
+    function peachSaleBadgeMarkup(p) {
+      const sale = getPeachSale(p);
+      if (!sale) return '';
+      return `<span class="peach-sale-badge">
+        <span class="peach-sale-badge-label">PEACHY SPECIAL</span>
+        <strong class="peach-sale-badge-discount">${sale.percentOff}% OFF</strong>
+      </span>`;
+    }
+
+    function priceMarkup(p) {
+      const sale = getPeachSale(p);
+      if (!sale) return fmt(p.price);
+      return `<span class="peach-sale-price">
+        <del class="peach-sale-price-old">${fmt(sale.compareAtPrice)}</del>
+        <strong class="peach-sale-price-current">${fmt(p.price)}</strong>
+      </span><span class="peach-sale-saving">Save ${fmt(sale.saving)} per pack</span>`;
+    }
+
     /* ============================================================
        HERO PRODUCT
     ============================================================ */
@@ -1874,11 +1986,19 @@
       const p = PRODUCTS.find(x => x.id === heroId);
       if (!p) return;
 
+      const isPeachSale = !!getPeachSale(p);
+      const saleBadge = document.getElementById('heroSaleBadge');
+      saleBadge.hidden = true;
+      saleBadge.innerHTML = peachSaleBadgeMarkup(p);
+      if (isPeachSale) saleBadge.hidden = false;
+      document.getElementById('heroSection').classList.toggle('peach-sale-hero', isPeachSale);
+      document.getElementById('heroAddBtn').textContent = isPeachSale ? '+ Grab this special' : '+ Add to cart';
+
       document.getElementById('heroImg').src = p.imgFull;
       document.getElementById('heroImg').alt = p.name;
       document.getElementById('heroName').textContent = p.name;
       document.getElementById('heroTagline').textContent = p.tagline;
-      document.getElementById('heroPrice').textContent = fmt(p.price);
+      document.getElementById('heroPrice').innerHTML = priceMarkup(p);
 
       if (p.inStock) {
         document.getElementById('heroControls').style.display = '';
@@ -1958,7 +2078,8 @@
       });
       sortedProducts.forEach(p => {
         const card = document.createElement('div');
-        card.className = 'product-card' + (p.comingSoon ? ' coming-soon-card out-of-stock' : (p.inStock ? '' : ' out-of-stock'));
+        const isPeachSale = !!getPeachSale(p);
+        card.className = 'product-card' + (p.comingSoon ? ' coming-soon-card out-of-stock' : (p.inStock ? '' : ' out-of-stock')) + (isPeachSale ? ' peach-sale-card' : '');
         card.dataset.id = p.id;
 
         const inCart = cart[p.id] || 0;
@@ -1977,7 +2098,7 @@
               <button class="card-stepper__btn card-stepper__plus" data-id="${p.id}" aria-label="Add one more ${p.name}">+</button>
             </div>`;
         } else {
-          bottomControl = `<button class="btn-quick-add" data-id="${p.id}" aria-label="Add ${p.name} to cart">+ Add</button>`;
+          bottomControl = `<button class="btn-quick-add" data-id="${p.id}" aria-label="Add ${p.name} to cart">${isPeachSale ? '+ Grab a pack' : '+ Add'}</button>`;
         }
 
         const isFreeGiftCard = p.id === 'citrus-dehydrated';
@@ -1987,6 +2108,7 @@
         }
 
         card.innerHTML = `
+          ${isPeachSale ? `<div class="peach-sale-strip">${peachSaleBadgeMarkup(p)}</div>` : ''}
           <div class="card-image" style="position:relative;">
             <img src="${p.imgThumb}" alt="${p.name}" loading="lazy" />
             ${p.comingSoon ? '<span class="coming-soon-badge">Coming Soon</span>' : ''}
@@ -1994,7 +2116,7 @@
           </div>
           <div class="card-body">
             <div class="card-name">${p.name}</div>
-            <div class="card-price">${fmt(p.price)}</div>
+            <div class="card-price">${priceMarkup(p)}</div>
             ${bottomControl}
           </div>
         `;
