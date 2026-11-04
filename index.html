@@ -521,15 +521,39 @@
       }
     }
 
-    /* Compact, non-interactive range previews */
+    /* Editorial, non-interactive range previews */
     .range-teasers {
       margin-bottom: 28px;
+      padding-top: 22px;
+      border-top: 1px solid #DDD5C5;
+    }
+    .range-teasers[hidden], .range-teaser[hidden] {
+      display: none;
+    }
+    .range-teasers-eyebrow {
+      margin-bottom: 7px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      line-height: 1.5;
+      color: var(--green-deep);
     }
     .range-teasers h2 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      color: #35452B;
+      text-wrap: balance;
+    }
+    .range-teasers-intro {
+      margin-bottom: 18px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #655E52;
     }
     .range-teaser-grid {
       display: grid;
@@ -538,36 +562,86 @@
     }
     .range-teaser {
       min-width: 0;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      background: #FFF9F0;
+      border: 1px solid #E5DECF;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(75, 60, 35, 0.045);
       overflow: hidden;
+      cursor: default;
+    }
+    .range-teaser--salts {
+      background: #F6F7EF;
     }
     .range-teaser img {
+      display: block;
       width: 100%;
-      height: 120px;
-      object-fit: contain;
-      padding: 8px;
-      background: #f0ede6;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+      padding: 0;
+      background: #E8E1D3;
     }
     .range-teaser-body {
-      padding: 10px 10px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px;
+    }
+    .range-teaser-category {
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: var(--green-deep);
     }
     .range-teaser h3 {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.3;
+      margin-bottom: 9px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.18;
+      color: #35452B;
+      text-wrap: balance;
     }
     .range-teaser p {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--green-deep);
-      line-height: 1.4;
+      margin-bottom: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #655E52;
     }
-    @media (max-width: 320px) {
+    .range-teaser-status {
+      display: inline-block;
+      margin-top: auto;
+      padding: 4px 9px;
+      border: 1px solid #D8DEBF;
+      border-radius: 99px;
+      background: #EDF1E0;
+      color: #465B29;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+    @media (max-width: 479px) {
+      .range-teasers h2 { font-size: 30px; }
+      .range-teaser-grid { gap: 12px; }
+      .range-teaser-body { padding: 13px 12px; }
+      .range-teaser-category { font-size: 9px; letter-spacing: 0.07em; }
+      .range-teaser h3 { font-size: 18px; line-height: 1.22; }
+    }
+    @media (max-width: 359px) {
       .range-teaser-grid { grid-template-columns: minmax(0, 1fr); }
+      .range-teaser-body { padding: 15px; }
+      .range-teaser h3 { font-size: 22px; }
     }
 
     /* ============================================================
@@ -1333,22 +1407,28 @@
         <div class="product-grid" id="productGrid"></div>
       </section>
 
-      <!-- Compact range previews; intentionally no purchase controls -->
+      <!-- Editorial range previews; intentionally no purchase controls -->
       <section class="range-teasers" id="rangeTeasers" aria-labelledby="rangeTeasersHeading" hidden>
-        <h2 id="rangeTeasersHeading">Coming soon from the orchard</h2>
+        <p class="range-teasers-eyebrow">NEXT FROM THE ORCHARD</p>
+        <h2 id="rangeTeasersHeading">Good things are growing.</h2>
+        <p class="range-teasers-intro">Coming soon — for thoughtful gifts and everyday flavour.</p>
         <div class="range-teaser-grid">
           <article class="range-teaser" id="giftBoxesTeaser" aria-labelledby="giftBoxesTeaserHeading" hidden>
             <img src="images/gift-boxes-range.webp" alt="Mypolonga Orchard gift box range" loading="lazy" />
             <div class="range-teaser-body">
-              <h3 id="giftBoxesTeaserHeading">Gift boxes</h3>
-              <p>Coming soon</p>
+              <span class="range-teaser-category">Gift boxes</span>
+              <h3 id="giftBoxesTeaserHeading">Give a little orchard goodness</h3>
+              <p>Thoughtful gift boxes, beautifully packed for someone special.</p>
+              <span class="range-teaser-status">On the way</span>
             </div>
           </article>
-          <article class="range-teaser" id="orchardSaltsTeaser" aria-labelledby="orchardSaltsTeaserHeading" hidden>
+          <article class="range-teaser range-teaser--salts" id="orchardSaltsTeaser" aria-labelledby="orchardSaltsTeaserHeading" hidden>
             <img src="images/salts-range.webp" alt="Mypolonga Orchard salt blend range" loading="lazy" />
             <div class="range-teaser-body">
-              <h3 id="orchardSaltsTeaserHeading">Orchard salts</h3>
-              <p>Coming soon</p>
+              <span class="range-teaser-category">Orchard salts</span>
+              <h3 id="orchardSaltsTeaserHeading">A little sprinkle. A lot of flavour.</h3>
+              <p>Four orchard blends to bring something extra to the table.</p>
+              <span class="range-teaser-status">On the way</span>
             </div>
           </article>
         </div>
